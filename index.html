@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VitalSync - Your complete health companion. Track blood pressure, blood sugar, heart rate, and medications all in one beautiful app. AI-powered insights for better health.">
+    <meta name="keywords" content="health tracker, blood pressure tracker, blood sugar monitor, heart rate app, medication reminder, vital signs tracker, health monitoring">
+    <title>VitalSync - Smart Health Tracking Made Beautiful | Monitor BP, Sugar & Heart Rate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --secondary: #9C27B0;
+            --accent: #FF6B9D;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --info: #2196F3;
+            --bg-light: #FFF5F8;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B7280;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #673AB7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Phone Mockup */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 320px;
+            height: 650px;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #FFF 100%);
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 30px;
+            background: #1A1A1A;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .screen-content {
+            padding: 50px 20px 20px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .greeting {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .user-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-card.primary {
+            background: linear-gradient(135deg, #FF6B9D 0%, #E91E63 100%);
+            color: white;
+        }
+
+        .stat-card.warning {
+            background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+            color: #5D4037;
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .stat-title {
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .stat-status {
+            font-size: 10px;
+            margin-top: 4px;
+            opacity: 0.7;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+        }
+
+        .section-description {
+            font-size: 22px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #E91E63 0%, #9C27B0 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.2);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #E91E63 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+        }
+
+        .feature-title {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .feature-description {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #673AB7 100%);
+            padding: 100px 40px;
+            border-radius: 40px;
+            margin: 80px auto;
+            max-width: 1400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stats-grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item-section {
+            color: white;
+        }
+
+        .stat-number-big {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label-big {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            padding: 100px 40px;
+            border-radius: 40px;
+            max-width: 1400px;
+            margin: 0 auto 80px;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.4);
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .step-description {
+            font-size: 17px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--bg-light);
+            padding: 100px 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 60px auto 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .rating {
+            color: #FFC107;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #673AB7 100%);
+            padding: 100px 40px;
+            border-radius: 40px;
+            text-align: center;
+            color: white;
+            max-width: 1400px;
+            margin: 80px auto;
+        }
+
+        .cta-title {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-description {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 80px 40px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #9CA3AF;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 2;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .cta-title {
+                font-size: 36px;
+            }
+
+            .phone-mockup {
+                width: 280px;
+                height: 570px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">💗 VitalSync</a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
+                <a href="terms.html" class="nav-link">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="badge">
+                    ✨ Trusted by 5M+ Health Conscious Users
+                </div>
+                <h1>Your Health, Perfectly Tracked</h1>
+                <p class="hero-subtitle">Monitor blood pressure, blood sugar, heart rate, and medications with AI-powered insights. Beautiful design meets powerful health tracking.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5M+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">App Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50M+</span>
+                        <span class="stat-label">Readings Logged</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/app/id6754313998" class="btn btn-primary">
+                        <span>🍎</span> Download for iOS
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="screen-content">
+                            <div class="app-header">
+                                <div>
+                                    <div class="greeting">Good Morning</div>
+                                    <div class="user-name">Sarah 👋</div>
+                                </div>
+                                <div class="notification-icon">🔔</div>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-card primary">
+                                    <div class="stat-icon">💗</div>
+                                    <div class="stat-title">HEART RATE</div>
+                                    <div class="stat-value">72 bpm</div>
+                                    <div class="stat-status">Normal</div>
+                                </div>
+                                <div class="stat-card warning">
+                                    <div class="stat-icon">🩸</div>
+                                    <div class="stat-title">BLOOD SUGAR</div>
+                                    <div class="stat-value">98 mg/dL</div>
+                                    <div class="stat-status">Optimal</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">🫀</div>
+                                    <div class="stat-title">BLOOD PRESSURE</div>
+                                    <div class="stat-value">120/80</div>
+                                    <div class="stat-status">Normal</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">💊</div>
+                                    <div class="stat-title">MEDICATIONS</div>
+                                    <div class="stat-value">2 Today</div>
+                                    <div class="stat-status">On track</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="section-header">
+            <div class="section-badge">Powerful Features</div>
+            <h2 class="section-title">Everything You Need for Better Health</h2>
+            <p class="section-description">Comprehensive health tracking with intelligent insights, beautiful design, and seamless experience.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💗</div>
+                <h3 class="feature-title">Heart Rate Monitor</h3>
+                <p class="feature-description">Track your heart rate with precision. Get instant insights into your cardiovascular health with trend analysis and personalized recommendations.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🩸</div>
+                <h3 class="feature-title">Blood Sugar Tracking</h3>
+                <p class="feature-description">Monitor glucose levels effortlessly. Set targets, track trends, and receive intelligent alerts for better diabetes management.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🫀</div>
+                <h3 class="feature-title">Blood Pressure Logger</h3>
+                <p class="feature-description">Record systolic and diastolic readings. Visualize patterns over time and share detailed reports with your healthcare provider.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💊</div>
+                <h3 class="feature-title">Medication Reminders</h3>
+                <p class="feature-description">Never miss a dose with smart notifications. Track adherence, manage refills, and maintain perfect medication compliance.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">AI-Powered Insights</h3>
+                <p class="feature-description">Get personalized health insights powered by advanced AI. Understand patterns, identify risks, and optimize your wellness journey.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Advanced Analytics</h3>
+                <p class="feature-description">Beautiful charts and detailed reports. Export data as PDF or share directly with doctors for better healthcare decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stats-grid-section">
+            <div class="stat-item-section">
+                <span class="stat-number-big">5M+</span>
+                <span class="stat-label-big">Happy Users Worldwide</span>
+            </div>
+            <div class="stat-item-section">
+                <span class="stat-number-big">50M+</span>
+                <span class="stat-label-big">Health Readings Logged</span>
+            </div>
+            <div class="stat-item-section">
+                <span class="stat-number-big">4.9★</span>
+                <span class="stat-label-big">Average App Rating</span>
+            </div>
+            <div class="stat-item-section">
+                <span class="stat-number-big">99%</span>
+                <span class="stat-label-big">User Satisfaction Rate</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="how-it-works">
+        <div class="section-header">
+            <div class="section-badge">Simple & Effective</div>
+            <h2 class="section-title">Start Your Health Journey in 3 Steps</h2>
+            <p class="section-description">Get started in minutes and experience the most intuitive health tracking app ever created.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Download & Setup</h3>
+                <p class="step-description">Install VitalSync from the App Store and complete the quick personalized onboarding in under 2 minutes.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Log Your Vitals</h3>
+                <p class="step-description">Record blood pressure, sugar, heart rate, and medications with our beautiful, intuitive interface.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Get AI Insights</h3>
+                <p class="step-description">Receive personalized recommendations, trend analysis, and actionable health insights powered by AI.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-badge">User Reviews</div>
+            <h2 class="section-title">Loved by Millions Worldwide</h2>
+            <p class="section-description">Join thousands who transformed their health journey with VitalSync.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"The best health tracking app I've ever used! The interface is gorgeous and tracking my BP has never been easier. My doctor loves the detailed reports."</p>
+                <div class="testimonial-author">Jennifer Martinez</div>
+                <div class="testimonial-role">Managing Hypertension</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"VitalSync helped me take control of my diabetes. The blood sugar tracking with AI insights is incredible. I've improved my A1C significantly!"</p>
+                <div class="testimonial-author">Robert Chen</div>
+                <div class="testimonial-role">Type 2 Diabetes Patient</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"The medication reminders are a lifesaver! Beautiful design, powerful features, and incredibly easy to use. Highly recommend to anyone tracking health."</p>
+                <div class="testimonial-author">Emily Thompson</div>
+                <div class="testimonial-role">Heart Disease Management</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Transform Your Health?</h2>
+        <p class="cta-description">Join 5+ million users who trust VitalSync for comprehensive health tracking. Download now and start your wellness journey today!</p>
+        <a href="https://apps.apple.com/app/id6754313998" class="btn btn-primary" style="background: white; color: #E91E63;">
+            <span>🍎</span> Download VitalSync Now
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>💗 VitalSync</h3>
+                <p>Your complete health companion. Track vitals, medications, and get AI-powered insights for better health management.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#features">Features</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://apps.apple.com/app/id6754313998">Download App</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><strong>Email:</strong> support@vitalsync.health</p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+                <p><strong>Hours:</strong> 24/7 Support</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Why VitalSync?</h3>
+                <p>✓ HIPAA compliant</p>
+                <p>✓ Bank-level encryption</p>
+                <p>✓ No data selling</p>
+                <p>✓ AI-powered insights</p>
+                <p>✓ Doctor-approved</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 VitalSync. All rights reserved. | Your health, our priority.</p>
+        </div>
+    </footer>
+</body>
+</html>
