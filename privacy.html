@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for VitalSync - Learn how we protect your health data with HIPAA-compliant security.">
+    <title>Privacy Policy - VitalSync</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --secondary: #9C27B0;
+            --bg-light: #FFF5F8;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B7280;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #673AB7 100%);
+            padding: 120px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            right: -250px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 22px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .content {
+            background: white;
+            margin: 80px auto;
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 900;
+            margin: 60px 0 24px;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            color: var(--text-dark);
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin: 24px 0 24px 40px;
+        }
+
+        li {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--primary);
+            margin: 40px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-dark);
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid #ef4444;
+            margin: 40px 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 80px 40px 40px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 24px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #9CA3AF;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 40px 30px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">💗 VitalSync</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
+                <a href="terms.html" class="nav-link">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Privacy Policy</h1>
+        <p>Your health data security is our highest priority</p>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+            <span class="update-badge">Last Updated: December 16, 2024</span>
+
+            <h2>VitalSync Privacy Policy</h2>
+            
+            <p>At VitalSync, we understand that your health information is deeply personal and sensitive. This Privacy Policy explains how we collect, use, protect, and handle your health data when you use our mobile application ("VitalSync," "the App," "our Service"). By using VitalSync, you agree to the practices described in this policy.</p>
+
+            <div class="highlight-box">
+                <p><strong>HIPAA Compliance Promise:</strong> VitalSync is designed with healthcare-grade security standards. We implement HIPAA-compliant practices to protect your Protected Health Information (PHI). Your vital signs, medication data, and health records are encrypted with bank-level security and NEVER sold to third parties. All health data processing happens securely on your device and our HIPAA-compliant servers.</p>
+            </div>
+
+            <h2>1. Health Information We Collect</h2>
+            
+            <h3>1.1 Health Data You Provide</h3>
+            <p>When using VitalSync to manage your health, you may provide:</p>
+            <ul>
+                <li><strong>Vital Signs:</strong> Blood pressure readings (systolic/diastolic), heart rate measurements, blood sugar/glucose levels, body temperature, weight, and other vital statistics.</li>
+                <li><strong>Medication Information:</strong> Medication names, dosages, schedules, prescription details, pharmacy information, and adherence tracking data.</li>
+                <li><strong>Health Profile:</strong> Age, gender, medical conditions, allergies, healthcare provider information, emergency contacts, and health goals.</li>
+                <li><strong>Symptoms & Notes:</strong> Custom health notes, symptom descriptions, mood tracking, and personal observations about your health.</li>
+                <li><strong>Account Information:</strong> Name, email address, date of birth, and encrypted password for account access.</li>
+            </ul>
+
+            <h3>1.2 Automatically Collected Data</h3>
+            <ul>
+                <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers, mobile network information, and app version.</li>
+                <li><strong>Usage Analytics:</strong> Features used, tracking frequency, app session duration, and interaction patterns (anonymized and aggregated).</li>
+                <li><strong>Performance Data:</strong> Crash reports, error logs, and app performance metrics to improve stability and user experience.</li>
+                <li><strong>Location Data (Optional):</strong> Approximate location for timezone adjustments and reminder delivery (only if you grant permission).</li>
+            </ul>
+
+            <h3>1.3 Health Data We Do NOT Collect</h3>
+            <p>VitalSync does NOT collect:</p>
+            <ul>
+                <li>Genetic or DNA information</li>
+                <li>Biometric data (fingerprints, facial recognition data)</li>
+                <li>Insurance information or payment card details</li>
+                <li>Social Security numbers or government IDs</li>
+                <li>Audio or video recordings</li>
+            </ul>
+
+            <h2>2. How We Use Your Health Information</h2>
+            
+            <h3>2.1 Core Health Tracking</h3>
+            <ul>
+                <li>Store and organize your vital signs, medication schedules, and health records</li>
+                <li>Generate personalized health insights and trend analysis</li>
+                <li>Send medication reminders and health tracking notifications</li>
+                <li>Create visualizations (charts, graphs) of your health data over time</li>
+                <li>Export health reports for sharing with healthcare providers</li>
+            </ul>
+
+            <h3>2.2 AI-Powered Insights</h3>
+            <ul>
+                <li>Analyze patterns in your health data to provide personalized recommendations</li>
+                <li>Identify potential health trends and anomalies</li>
+                <li>Generate predictive insights for better health management</li>
+                <li>Provide educational content tailored to your health conditions</li>
+            </ul>
+
+            <h3>2.3 App Improvement</h3>
+            <ul>
+                <li>Analyze usage patterns to enhance features and user experience</li>
+                <li>Identify and fix bugs, crashes, and technical issues</li>
+                <li>Develop new health tracking capabilities based on user needs</li>
+                <li>Conduct research to improve AI algorithms (using anonymized, aggregated data only)</li>
+            </ul>
+
+            <h3>2.4 Communication</h3>
+            <ul>
+                <li>Send important health-related notifications and reminders</li>
+                <li>Respond to support requests and inquiries</li>
+                <li>Provide updates about app features and improvements</li>
+                <li>Share health tips and educational content (opt-in only)</li>
+            </ul>
+
+            <h2>3. HIPAA-Compliant Data Security</h2>
+
+            <h3>3.1 Industry-Leading Encryption</h3>
+            <p>VitalSync employs multiple layers of security to protect your health data:</p>
+            <ul>
+                <li><strong>Data at Rest:</strong> AES-256 encryption for all stored health data</li>
+                <li><strong>Data in Transit:</strong> TLS 1.3 encryption for all data transmission</li>
+                <li><strong>Database Security:</strong> Encrypted databases with role-based access controls</li>
+                <li><strong>Secure Authentication:</strong> Multi-factor authentication and biometric login options</li>
+            </ul>
+
+            <h3>3.2 HIPAA-Compliant Infrastructure</h3>
+            <ul>
+                <li>All servers hosted in HIPAA-compliant data centers (AWS HIPAA-eligible services)</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>Comprehensive disaster recovery and backup systems</li>
+                <li>Strict access controls and employee training on health data privacy</li>
+                <li>Business Associate Agreements (BAAs) with all service providers handling PHI</li>
+            </ul>
+
+            <h3>3.3 Data Retention</h3>
+            <ul>
+                <li><strong>Health Records:</strong> Retained as long as you maintain an active account, plus 7 years after account deletion (HIPAA requirement)</li>
+                <li><strong>Usage Analytics:</strong> Anonymized data retained for 24 months</li>
+                <li><strong>Crash Reports:</strong> Retained for 12 months for debugging purposes</li>
+                <li><strong>Account Information:</strong> Deleted within 30 days of account deletion request</li>
+            </ul>
+
+            <h3>3.4 Data Backup and Recovery</h3>
+            <ul>
+                <li>Automatic encrypted backups to HIPAA-compliant cloud storage</li>
+                <li>Multi-region backup redundancy for disaster recovery</li>
+                <li>You can export your health data anytime in industry-standard formats (PDF, CSV, HL7 FHIR)</li>
+            </ul>
+
+            <h2>4. Data Sharing and Disclosure</h2>
+
+            <h3>4.1 We NEVER Sell Your Health Data</h3>
+            <p>VitalSync will NEVER sell, rent, or trade your health information to third parties for marketing purposes. Your health data is not a commodity.</p>
+
+            <h3>4.2 Sharing with Your Consent</h3>
+            <p>We may share your health data ONLY with your explicit consent:</p>
+            <ul>
+                <li><strong>Healthcare Providers:</strong> When you choose to export and share reports with your doctor</li>
+                <li><strong>Family Members/Caregivers:</strong> If you enable family sharing features</li>
+                <li><strong>Health Integrations:</strong> With your permission, sync data with Apple Health, Google Fit, or other health platforms</li>
+            </ul>
+
+            <h3>4.3 Service Providers (Business Associates)</h3>
+            <p>We work with trusted service providers who help us operate VitalSync. All providers sign HIPAA Business Associate Agreements (BAAs):</p>
+            <ul>
+                <li><strong>Cloud Hosting:</strong> AWS HIPAA-eligible services for secure data storage</li>
+                <li><strong>Analytics:</strong> Firebase Analytics (with health data anonymization and BAA)</li>
+                <li><strong>Customer Support:</strong> Zendesk with PHI protections and BAA</li>
+                <li><strong>Email Services:</strong> SendGrid with HIPAA compliance and BAA</li>
+            </ul>
+
+            <h3>4.4 Legal Requirements</h3>
+            <p>We may disclose health information if required by law:</p>
+            <ul>
+                <li>In response to valid court orders, subpoenas, or legal processes</li>
+                <li>To comply with HIPAA regulations and healthcare laws</li>
+                <li>To protect against serious threats to public health or safety</li>
+                <li>To report suspected abuse, neglect, or domestic violence as required by law</li>
+                <li>To law enforcement in specific circumstances (with proper legal authorization)</li>
+            </ul>
+
+            <h3>4.5 Business Transfers</h3>
+            <p>In the event of a merger, acquisition, or sale of assets, your health information may be transferred. We will notify you via email at least 30 days before any transfer and provide options to delete your data if you do not consent.</p>
+
+            <h2>5. Your Privacy Rights</h2>
+
+            <h3>5.1 Access and Control</h3>
+            <p>You have comprehensive rights over your health data:</p>
+            <ul>
+                <li><strong>Right to Access:</strong> Request a copy of all your health data in a portable format</li>
+                <li><strong>Right to Correct:</strong> Request correction of inaccurate or incomplete health information</li>
+                <li><strong>Right to Delete:</strong> Request deletion of your account and all associated health data</li>
+                <li><strong>Right to Export:</strong> Download your complete health history in PDF, CSV, or HL7 FHIR format</li>
+                <li><strong>Right to Restrict:</strong> Limit how we use or disclose certain health information</li>
+                <li><strong>Right to Object:</strong> Object to certain uses of your health data</li>
+                <li><strong>Right to Accounting:</strong> Request a list of all disclosures of your health information</li>
+            </ul>
+
+            <p>To exercise these rights, email support@vitalsync.health with "Privacy Request" in the subject line.</p>
+
+            <h3>5.2 Notification Settings</h3>
+            <p>You control all communications:</p>
+            <ul>
+                <li>Medication reminders (can be enabled/disabled per medication)</li>
+                <li>Health tracking reminders (customizable frequency)</li>
+                <li>Educational health tips (opt-in only)</li>
+                <li>App updates and announcements (can be disabled)</li>
+            </ul>
+
+            <h3>5.3 Data Portability</h3>
+            <p>Export your health data anytime:</p>
+            <ul>
+                <li>VitalSync → Settings → Export Data</li>
+                <li>Choose format: PDF (visual reports), CSV (raw data), or HL7 FHIR (healthcare standard)</li>
+                <li>Share directly with healthcare providers via secure email</li>
+            </ul>
+
+            <h3>5.4 Account Deletion</h3>
+            <p>Delete your account and health data:</p>
+            <ul>
+                <li>VitalSync → Settings → Account → Delete Account</li>
+                <li>Confirm deletion with password or biometric authentication</li>
+                <li>All health data deleted within 30 days (except 7-year HIPAA retention for legal compliance)</li>
+                <li>Receive confirmation email when deletion is complete</li>
+            </ul>
+
+            <h2>6. Children's Privacy</h2>
+
+            <p>VitalSync is not intended for children under 13 years of age. We do not knowingly collect health information from children under 13. If you are a parent or guardian and believe your child has provided us with health information, contact us immediately at support@vitalsync.health, and we will delete the information promptly.</p>
+
+            <p><strong>Parental Consent for Minors (13-17):</strong> For users aged 13-17, we require verified parental consent before collecting any health information. Parents have full access to manage their child's health data.</p>
+
+            <h2>7. State-Specific Privacy Rights</h2>
+
+            <h3>7.1 California Privacy Rights (CCPA/CPRA)</h3>
+            <p>California residents have additional rights:</p>
+            <ul>
+                <li><strong>Right to Know:</strong> Request detailed disclosure of health information collected, used, and shared</li>
+                <li><strong>Right to Delete:</strong> Request deletion of health information (with HIPAA exceptions)</li>
+                <li><strong>Right to Opt-Out:</strong> Opt out of "sale" or "sharing" of personal information (Note: We do NOT sell health data)</li>
+                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate for exercising privacy rights</li>
+                <li><strong>Right to Limit Sensitive Data:</strong> Limit use of sensitive personal information (health data)</li>
+            </ul>
+
+            <p>To exercise CCPA rights, email support@vitalsync.health with "CCPA Request" in the subject.</p>
+
+            <h3>7.2 European Privacy Rights (GDPR)</h3>
+            <p>Users in the European Economic Area (EEA), UK, and Switzerland have rights under GDPR:</p>
+            <ul>
+                <li><strong>Legal Basis for Processing:</strong> We process health data based on your explicit consent and contractual necessity</li>
+                <li><strong>Data Protection Officer:</strong> Contact our DPO at dpo@vitalsync.health</li>
+                <li><strong>Right to Withdraw Consent:</strong> Withdraw consent for data processing at any time</li>
+                <li><strong>Right to Lodge Complaint:</strong> File complaints with your local supervisory authority</li>
+                <li><strong>Right to Data Portability:</strong> Receive health data in machine-readable format</li>
+                <li><strong>Right to Erasure:</strong> Request deletion of health data (with legal retention exceptions)</li>
+            </ul>
+
+            <h3>7.3 Other State Laws</h3>
+            <p>We comply with additional state privacy laws including Virginia CDPA, Colorado CPA, Connecticut CTDPA, and Utah UCPA. Contact us to exercise state-specific rights.</p>
+
+            <h2>8. International Data Transfers</h2>
+
+            <p>VitalSync operates globally. If you use the app outside the United States, your health information may be transferred to and processed in the US. We implement appropriate safeguards:</p>
+            <ul>
+                <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+                <li>HIPAA-compliant security measures for all data transfers</li>
+                <li>Encryption of data in transit and at rest</li>
+                <li>Regular security assessments of international data flows</li>
+            </ul>
+
+            <h2>9. Third-Party Services and Links</h2>
+
+            <p>VitalSync may integrate with third-party health platforms (Apple Health, Google Fit) or contain links to external websites. These services have their own privacy policies. We are not responsible for their practices. Review their policies before sharing health data.</p>
+
+            <p><strong>Apple Health Integration:</strong> If you enable Apple Health sync, data sharing is governed by Apple's Health app privacy policy. You control what data is shared.</p>
+
+            <h2>10. Changes to This Privacy Policy</h2>
+
+            <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. When we make changes:</p>
+            <ul>
+                <li>Update the "Last Updated" date at the top</li>
+                <li>Notify you via email and in-app notification for material changes</li>
+                <li>Provide at least 30 days' notice before implementing material changes affecting health data</li>
+                <li>Request renewed consent if required by law</li>
+            </ul>
+
+            <p>Your continued use after changes constitutes acceptance. If you disagree, you may delete your account.</p>
+
+            <h2>11. Data Breach Notification</h2>
+
+            <p>In the unlikely event of a data breach affecting your health information, we will:</p>
+            <ul>
+                <li>Notify you within 72 hours of discovering the breach (HIPAA requirement)</li>
+                <li>Provide details about what information was affected</li>
+                <li>Explain steps we're taking to address the breach</li>
+                <li>Offer guidance on how you can protect yourself</li>
+                <li>Report to relevant authorities as required by law</li>
+            </ul>
+
+            <h2>12. Contact Us</h2>
+
+            <p>For privacy questions, concerns, or to exercise your rights:</p>
+
+            <div class="highlight-box">
+                <p><strong>Email:</strong> support@vitalsync.health</p>
+                <p><strong>Subject Line:</strong> Privacy Request - VitalSync</p>
+                <p><strong>Data Protection Officer:</strong> dpo@vitalsync.health</p>
+                <p><strong>Response Time:</strong> Within 48 hours for privacy requests</p>
+            </div>
+
+            <p>For data subject requests, include:</p>
+            <ul>
+                <li>Your full name and email address</li>
+                <li>Detailed description of your request</li>
+                <li>Account verification information</li>
+                <li>Country/region of residence</li>
+            </ul>
+
+            <h2>13. Your Health, Your Privacy</h2>
+
+            <div class="highlight-box">
+                <p><strong>Our Promise to You:</strong> At VitalSync, your health data privacy is sacred. We implement HIPAA-compliant security measures, never sell your information, and give you complete control over your health records. We believe in transparency, security, and putting your health first.</p>
+
+                <p style="margin-top: 20px;"><strong>Security Commitments:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li>Bank-level AES-256 encryption for all health data</li>
+                    <li>HIPAA-compliant infrastructure and business practices</li>
+                    <li>Regular third-party security audits and penetration testing</li>
+                    <li>Zero-tolerance policy for unauthorized data access</li>
+                    <li>24/7 security monitoring and threat detection</li>
+                </ul>
+
+                <p style="margin-top: 20px;"><strong>Thank you for trusting VitalSync with your most personal health information.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>💗 VitalSync</h3>
+                <p>Your complete health companion with HIPAA-compliant security and AI-powered insights.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@vitalsync.health</p>
+                <p>DPO: dpo@vitalsync.health</p>
+                <p>Response: Within 24 hours</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Security</h3>
+                <p>✓ HIPAA compliant</p>
+                <p>✓ AES-256 encryption</p>
+                <p>✓ No data selling</p>
+                <p>✓ Regular audits</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 VitalSync. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
