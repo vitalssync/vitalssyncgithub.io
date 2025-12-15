@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for VitalSync - Read our terms for using the VitalSync health tracking app.">
+    <title>Terms of Service - VitalSync</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --secondary: #9C27B0;
+            --bg-light: #FFF5F8;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B7280;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #673AB7 100%);
+            padding: 120px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            left: -250px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 22px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .content {
+            background: white;
+            margin: 80px auto;
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 900;
+            margin: 60px 0 24px;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            color: var(--text-dark);
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin: 24px 0 24px 40px;
+        }
+
+        li {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--primary);
+            margin: 40px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-dark);
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid #ef4444;
+            margin: 40px 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 80px 40px 40px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 24px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #9CA3AF;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 40px 30px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">💗 VitalSync</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
+                <a href="terms.html" class="nav-link">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Terms of Service</h1>
+        <p>Please read these terms carefully before using VitalSync</p>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+            <span class="update-badge">Last Updated: December 16, 2024</span>
+
+            <h2>VitalSync Terms of Service</h2>
+            
+            <p>Welcome to VitalSync! These Terms of Service ("Terms," "Agreement") govern your use of the VitalSync mobile application ("App," "Service," "VitalSync") for tracking vital signs, medications, and health data. By downloading, installing, or using VitalSync, you agree to these Terms and our Privacy Policy.</p>
+
+            <div class="highlight-box">
+                <p><strong>Important Notice:</strong> VitalSync is a health tracking tool, NOT a medical device or diagnostic tool. It does not provide medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical decisions. In emergencies, call 911 or your local emergency number immediately.</p>
+            </div>
+
+            <h2>1. Acceptance of Terms</h2>
+            
+            <p>By using VitalSync, you confirm that:</p>
+            <ul>
+                <li>You have read, understood, and agree to these Terms and our Privacy Policy</li>
+                <li>You are at least 18 years of age, or have parental/guardian consent if 13-17</li>
+                <li>You are legally capable of entering into binding agreements</li>
+                <li>You understand VitalSync is a health tracking tool, not medical advice</li>
+                <li>You will use the app responsibly for personal health management</li>
+            </ul>
+
+            <h2>2. Description of Service</h2>
+
+            <h3>2.1 Core Features (Free Version)</h3>
+            <p>VitalSync provides comprehensive health tracking tools:</p>
+            <ul>
+                <li><strong>Vital Signs Tracking:</strong> Blood pressure, heart rate, blood sugar/glucose, temperature, and weight monitoring</li>
+                <li><strong>Medication Management:</strong> Medication logging, dosage tracking, and basic reminders</li>
+                <li><strong>Health History:</strong> View and organize your health records over time</li>
+                <li><strong>Basic Analytics:</strong> Simple charts and trend visualization</li>
+                <li><strong>Data Export:</strong> Export health reports as PDF</li>
+            </ul>
+
+            <h3>2.2 Premium Features (Subscription)</h3>
+            <ul>
+                <li>AI-powered health insights and personalized recommendations</li>
+                <li>Advanced analytics with predictive health trends</li>
+                <li>Unlimited medication tracking and smart reminders</li>
+                <li>Cloud backup with HIPAA-compliant storage</li>
+                <li>Priority customer support</li>
+                <li>Export data in multiple formats (PDF, CSV, HL7 FHIR)</li>
+                <li>Family sharing and caregiver access</li>
+                <li>Integration with Apple Health and Google Fit</li>
+            </ul>
+
+            <h3>2.3 Medical Disclaimer</h3>
+            <div class="warning-box">
+                <p><strong>CRITICAL MEDICAL DISCLAIMER:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li>VitalSync is NOT a medical device, diagnostic tool, or substitute for professional medical advice</li>
+                    <li>Do NOT use VitalSync for medical emergencies - call 911 immediately</li>
+                    <li>Always consult qualified healthcare professionals for medical decisions</li>
+                    <li>VitalSync does NOT diagnose, treat, cure, or prevent any disease</li>
+                    <li>AI insights are educational only and NOT medical recommendations</li>
+                    <li>Do NOT change medications or treatment plans without doctor approval</li>
+                </ul>
+            </div>
+
+            <h2>3. User Accounts and Responsibilities</h2>
+
+            <h3>3.1 Account Creation</h3>
+            <p>To use certain features, you must create an account. You agree to:</p>
+            <ul>
+                <li>Provide accurate, current health and personal information</li>
+                <li>Maintain the security of your account credentials</li>
+                <li>Notify us immediately of unauthorized access</li>
+                <li>Accept responsibility for all activities under your account</li>
+                <li>Not share your account with others (except authorized caregivers)</li>
+            </ul>
+
+            <h3>3.2 Accurate Health Data</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Entering accurate vital signs and health measurements</li>
+                <li>Using properly calibrated medical devices for readings</li>
+                <li>Updating medication information when prescriptions change</li>
+                <li>Verifying data before sharing with healthcare providers</li>
+            </ul>
+
+            <h3>3.3 Account Deletion</h3>
+            <p>Delete your account anytime through: VitalSync → Settings → Account → Delete Account. Health data will be deleted per our Privacy Policy (30 days for active data, 7-year retention for legal compliance).</p>
+
+            <h2>4. Acceptable Use</h2>
+
+            <h3>4.1 Permitted Use</h3>
+            <ul>
+                <li>Personal health tracking and wellness management</li>
+                <li>Sharing health reports with your healthcare providers</li>
+                <li>Family health monitoring (with consent)</li>
+                <li>Educational purposes related to personal health</li>
+            </ul>
+
+            <h3>4.2 Prohibited Activities</h3>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Use VitalSync for illegal purposes or fraud</li>
+                <li>Provide false or misleading health information intentionally</li>
+                <li>Reverse engineer, decompile, or disassemble the app</li>
+                <li>Attempt to access other users' health data</li>
+                <li>Use the app to provide medical advice to others</li>
+                <li>Scrape, harvest, or collect data from the service</li>
+                <li>Upload malicious code, viruses, or harmful content</li>
+                <li>Interfere with app functionality or servers</li>
+                <li>Violate any applicable healthcare laws (HIPAA, etc.)</li>
+            </ul>
+
+            <h2>5. Subscriptions and Payments</h2>
+
+            <h3>5.1 Premium Subscriptions</h3>
+            <p>VitalSync offers:</p>
+            <ul>
+                <li>Monthly Premium subscription (auto-renewing)</li>
+                <li>Annual Premium subscription (auto-renewing, discounted)</li>
+                <li>Lifetime Premium access (one-time purchase)</li>
+            </ul>
+
+            <h3>5.2 Payment and Billing</h3>
+            <p>All subscriptions are processed through Apple App Store or Google Play Store:</p>
+            <ul>
+                <li>Payment charged to your Apple ID or Google account at purchase</li>
+                <li>Subscriptions auto-renew unless canceled 24 hours before renewal</li>
+                <li>Account charged within 24 hours prior to renewal</li>
+                <li>Manage subscriptions in App Store/Play Store settings</li>
+                <li>Prices in USD or local currency, subject to change with notice</li>
+            </ul>
+
+            <h3>5.3 Free Trials</h3>
+            <ul>
+                <li>Free trials available to new Premium users only</li>
+                <li>One trial per user</li>
+                <li>Auto-converts to paid subscription unless canceled</li>
+                <li>Cancel at least 24 hours before trial ends to avoid charges</li>
+            </ul>
+
+            <h3>5.4 Refunds</h3>
+            <p>Refund requests are handled by Apple or Google:</p>
+            <ul>
+                <li><strong>Apple:</strong> <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a></li>
+                <li><strong>Google:</strong> <a href="https://support.google.com/googleplay" target="_blank">support.google.com/googleplay</a></li>
+                <li>Contact support@vitalsync.health for assistance</li>
+            </ul>
+
+            <h3>5.5 Cancellation</h3>
+            <p>Cancel subscriptions anytime:</p>
+            <ul>
+                <li><strong>iOS:</strong> Settings → [Your Name] → Subscriptions</li>
+                <li><strong>Android:</strong> Google Play Store → Account → Subscriptions</li>
+                <li>Premium access continues until end of billing period</li>
+                <li>No refunds for unused portion of subscription</li>
+            </ul>
+
+            <h2>6. Intellectual Property</h2>
+
+            <h3>6.1 Our Rights</h3>
+            <p>VitalSync, including all content, features, code, UI, algorithms, and branding, is owned by us and protected by intellectual property laws. You acknowledge:</p>
+            <ul>
+                <li>The app is licensed, not sold</li>
+                <li>We retain all ownership rights</li>
+                <li>You acquire no ownership through use</li>
+            </ul>
+
+            <h3>6.2 Limited License</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+                <li>Download and use VitalSync on your personal devices</li>
+                <li>Track your personal health data</li>
+                <li>Access features per your subscription level</li>
+            </ul>
+
+            <h3>6.3 Your Health Data</h3>
+            <p>You retain ownership of your health data. By using VitalSync, you grant us a limited license to:</p>
+            <ul>
+                <li>Store and process health data to provide the service</li>
+                <li>Generate AI insights and analytics</li>
+                <li>Create aggregated, anonymized data for research and improvement</li>
+            </ul>
+
+            <p>We do NOT claim ownership of your health information and will NOT sell it to third parties.</p>
+
+            <h2>7. Health Data Accuracy and Liability</h2>
+
+            <h3>7.1 No Warranty of Accuracy</h3>
+            <p>VitalSync relies on data YOU enter. We cannot guarantee:</p>
+            <ul>
+                <li>Accuracy of health measurements you log</li>
+                <li>Proper calibration of your medical devices</li>
+                <li>Correct interpretation of health data</li>
+                <li>Accuracy of AI-generated insights</li>
+            </ul>
+
+            <h3>7.2 Data Backup Responsibility</h3>
+            <p>You are responsible for maintaining backups of important health data. We provide cloud backup (Premium), but recommend:</p>
+            <ul>
+                <li>Regularly exporting health reports</li>
+                <li>Keeping physical copies of critical health information</li>
+                <li>Sharing important data with your healthcare provider</li>
+            </ul>
+
+            <h2>8. Disclaimers and Warranties</h2>
+
+            <h3>8.1 "As Is" Service</h3>
+            <p>VITALSYNC IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL WARRANTIES INCLUDING:</p>
+            <ul>
+                <li>Merchantability, fitness for a particular purpose</li>
+                <li>Uninterrupted or error-free operation</li>
+                <li>Accuracy of health insights or recommendations</li>
+                <li>Medical diagnosis, treatment, or cure capabilities</li>
+                <li>Prevention of health conditions or diseases</li>
+            </ul>
+
+            <h3>8.2 No Medical Advice</h3>
+            <p>VitalSync does NOT provide medical advice. AI insights are educational only. Always consult healthcare professionals for medical decisions.</p>
+
+            <h2>9. Limitation of Liability</h2>
+
+            <h3>9.1 Liability Limits</h3>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, VITALSYNC AND ITS AFFILIATES SHALL NOT BE LIABLE FOR:</p>
+            <ul>
+                <li>Medical complications, injuries, or health outcomes</li>
+                <li>Incorrect health measurements or data entry errors</li>
+                <li>Missed medications or health tracking</li>
+                <li>Reliance on AI insights or app recommendations</li>
+                <li>Data loss, corruption, or unauthorized access</li>
+                <li>Indirect, incidental, consequential, or punitive damages</li>
+                <li>Lost profits, revenue, or business opportunities</li>
+            </ul>
+
+            <h3>9.2 Maximum Liability</h3>
+            <p>Our total liability shall not exceed the amount you paid us in the 12 months preceding the claim, or $100 USD, whichever is greater.</p>
+
+            <h2>10. Indemnification</h2>
+
+            <p>You agree to indemnify and hold harmless VitalSync from claims arising from:</p>
+            <ul>
+                <li>Your use or misuse of the app</li>
+                <li>Violation of these Terms or laws</li>
+                <li>Inaccurate health data entry</li>
+                <li>Medical decisions based on app data</li>
+                <li>Violation of third-party rights</li>
+                <li>Negligent or willful misconduct</li>
+            </ul>
+
+            <h2>11. Modifications</h2>
+
+            <h3>11.1 Changes to Terms</h3>
+            <p>We may modify these Terms anytime. When we do:</p>
+            <ul>
+                <li>Update the "Last Updated" date</li>
+                <li>Notify you via email and in-app notification</li>
+                <li>Provide 30 days to review changes</li>
+            </ul>
+
+            <p>Continued use after changes constitutes acceptance.</p>
+
+            <h3>11.2 Changes to Service</h3>
+            <p>We may modify, suspend, or discontinue features anytime, including:</p>
+            <ul>
+                <li>Adding or removing health tracking capabilities</li>
+                <li>Changing subscription pricing or features</li>
+                <li>Updating AI algorithms and insights</li>
+            </ul>
+
+            <h2>12. Termination</h2>
+
+            <h3>12.1 By You</h3>
+            <p>Terminate anytime by uninstalling the app or deleting your account.</p>
+
+            <h3>12.2 By Us</h3>
+            <p>We may suspend or terminate your access if you:</p>
+            <ul>
+                <li>Violate these Terms or laws</li>
+                <li>Engage in fraudulent activities</li>
+                <li>Misuse the service or health data</li>
+                <li>Fail to pay subscription fees</li>
+                <li>Threaten service security or integrity</li>
+            </ul>
+
+            <h3>12.3 Effects of Termination</h3>
+            <ul>
+                <li>Right to use the app ceases immediately</li>
+                <li>Health data deleted per Privacy Policy</li>
+                <li>No refunds for unused subscription periods</li>
+                <li>Export data before termination if desired</li>
+            </ul>
+
+            <h2>13. Governing Law and Disputes</h2>
+
+            <h3>13.1 Informal Resolution</h3>
+            <p>Before filing a claim, contact support@vitalsync.health with a detailed dispute description. We'll attempt resolution within 60 days.</p>
+
+            <h3>13.2 Binding Arbitration</h3>
+            <p>If informal resolution fails, disputes shall be settled by binding arbitration per recognized arbitration association rules.</p>
+
+            <h3>13.3 Class Action Waiver</h3>
+            <p>YOU AND VITALSYNC AGREE TO BRING CLAIMS ONLY IN INDIVIDUAL CAPACITY, NOT AS PLAINTIFF IN ANY CLASS ACTION.</p>
+
+            <h2>14. General Provisions</h2>
+
+            <h3>14.1 Entire Agreement</h3>
+            <p>These Terms and our Privacy Policy constitute the entire agreement and supersede all prior agreements.</p>
+
+            <h3>14.2 Severability</h3>
+            <p>If any provision is invalid, remaining provisions remain in effect.</p>
+
+            <h3>14.3 Apple & Google Terms</h3>
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>These Terms are between you and VitalSync, not Apple or Google</li>
+                <li>Apple and Google have no obligation to provide support</li>
+                <li>Apple and Google are not responsible for the app or health data</li>
+                <li>You must comply with App Store/Play Store terms</li>
+            </ul>
+
+            <h2>15. Contact Us</h2>
+
+            <div class="highlight-box">
+                <p><strong>Email:</strong> support@vitalsync.health</p>
+                <p><strong>Subject Line:</strong> Terms Inquiry - VitalSync</p>
+                <p><strong>Response Time:</strong> Within 48-72 hours</p>
+            </div>
+
+            <h2>16. Acknowledgment</h2>
+
+            <div class="highlight-box">
+                <p><strong>By using VitalSync, you acknowledge that:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li>You've read and agree to these Terms and Privacy Policy</li>
+                    <li>VitalSync is a tracking tool, NOT medical advice</li>
+                    <li>You'll consult healthcare professionals for medical decisions</li>
+                    <li>You're responsible for accurate health data entry</li>
+                    <li>You understand limitations and disclaimers</li>
+                    <li>You'll use the app responsibly for personal health management</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong>Thank you for trusting VitalSync with your health tracking journey!</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>💗 VitalSync</h3>
+                <p>Your complete health companion with HIPAA-compliant security.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@vitalsync.health</p>
+                <p>Response: Within 24 hours</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p>✓ HIPAA compliant</p>
+                <p>✓ Not medical advice</p>
+                <p>✓ Tracking tool only</p>
+                <p>✓ Consult doctors</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 VitalSync. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
